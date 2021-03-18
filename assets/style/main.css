@@ -1,0 +1,240 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html body {
+  font-size: 1.6rem;
+  /* height: 100vh; */
+  background-color: rgba(0, 0, 0, 0.63);
+}
+
+html body .container {
+  width: 95vw;
+  max-width: 1200px;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  gap: 2rem;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "headerr headerr headerr headerr" "aside main main main" "footer footer footer footer";
+}
+
+html body .container header {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  background-color: #fff;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: headerr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+}
+
+html body .container header h1 {
+  font-size: 4.8rem;
+  color: black;
+}
+
+html body .container aside {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 200;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: aside;
+  background-color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+html body .container aside .DivImagem img {
+  width: 20rem;
+  border-radius: 2rem;
+}
+
+html body .container aside .contentInfo {
+  max-width: 72%;
+  margin: 3rem auto;
+}
+
+html body .container aside .contentInfo h2 {
+  margin-bottom: 1rem;
+}
+
+html body .container aside .contentInfo small {
+  margin-top: 1rem;
+  display: block;
+}
+
+html body .container aside #slider {
+  width: 50%;
+  height: 25vw;
+  max-height: 150px;
+  position: relative;
+}
+
+html body .container aside #slider img {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: opacity 800ms;
+  transition: opacity 800ms;
+}
+
+html body .container aside #slider img.selected {
+  opacity: 1;
+}
+
+html body .container main {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 200;
+  background-color: tomato;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: main;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 1rem;
+}
+
+html body .container footer {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  background-color: #fff;
+  color: black;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: footer;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html body .container footer ul {
+  margin-left: 2rem;
+}
+
+html body .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+}
+
+html body .icons a {
+  margin: 0rem 1rem;
+  width: 6rem;
+  height: 6rem;
+  background-color: rgba(204, 204, 204, 0.74);
+  display: inline-block;
+  border-radius: 2.4rem;
+  -webkit-box-shadow: 0.6rem 0.6rem 1.2rem rgba(0, 0, 0, 0.15), -0.6rem -0.6rem 1.2rem rgba(255, 255, 255, 0.1);
+          box-shadow: 0.6rem 0.6rem 1.2rem rgba(0, 0, 0, 0.15), -0.6rem -0.6rem 1.2rem rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  font-size: 2.5rem;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+  position: relative;
+}
+
+html body .icons a:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  border-radius: 50%;
+}
+
+html body .icons a i::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-size: 200% 200%;
+  background-position: 75% 75%;
+  top: 0;
+  left: 0;
+  line-height: 6rem;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-transition: background .5s linear;
+  transition: background .5s linear;
+}
+
+html body .icons a:hover i::before {
+  background-position: 0% 0%;
+}
+
+html body .icons a .fa-facebook-f::before {
+  background-image: linear-gradient(135deg, #3b5998 30%, #0a3d62 50%);
+}
+
+html body .icons a .fa-instagram::before {
+  background-image: linear-gradient(135deg, #c32aa3 30%, #0a3d62 50%);
+}
+
+html body .icons a .fa-whatsapp::before {
+  background-image: linear-gradient(135deg, #18d741 30%, #0a3d62 50%);
+}
+
+html body .icons a .fa-linkedin-in::before {
+  background-image: linear-gradient(135deg, #007bb5 30%, #0a3d62 50%);
+}
+
+@media (max-width: 768px) {
+  html body .container {
+        grid-template-areas: "headerr headerr headerr headerr" "aside aside aside aside" "main main main main" "footer footer footer footer";
+  }
+  html body .container aside #slider {
+    width: 80%;
+  }
+  html body .container aside #slider img {
+    width: 30%;
+  }
+}
+
+@media (max-width: 374px) {
+  html body .container {
+        grid-template-areas: "headerr headerr headerr headerr" "aside aside aside aside" "main main main main" "footer footer footer footer";
+  }
+  html body .container header {
+    display: block;
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=main.css.map */

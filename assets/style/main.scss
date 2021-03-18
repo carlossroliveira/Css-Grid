@@ -1,0 +1,267 @@
+// ============================== Configuration initial
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+html {
+    font-size: 62.5%;
+
+    body {
+        font-size: 1.6rem;
+
+
+
+        /* height: 100vh; */
+
+        background-color: rgba(0, 0, 0, 0.63);
+
+        // ============================== Container grid 
+        .container {
+            width: 95vw;
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            gap: 2rem;
+
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas:
+
+                "headerr headerr headerr headerr"
+                "aside main main main"
+                "footer footer footer footer"
+            ;
+
+
+            // ============================== Header 
+            header {
+                font-family: 'Roboto Slab', serif;
+                font-weight: 700;
+                background-color: #fff;
+                grid-area: headerr;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1rem;
+
+                h1 {
+                    font-size: 4.8rem;
+                    color: black;
+                }
+            }
+
+            // ============================== Aside 
+            aside {
+                font-family: 'Roboto Slab', serif;
+                font-weight: 200;
+                grid-area: aside;
+                background-color: #fff;
+                text-align: center;
+                padding: 1rem;
+
+                .DivImagem img {
+                    width: 20rem;
+                    border-radius: 2rem;
+
+                }
+
+                .contentInfo {
+                    max-width: 72%;
+                    margin: 3rem auto;
+
+                    h2 {
+                        margin-bottom: 1rem;
+                    }
+
+                    small {
+                        margin-top: 1rem;
+                        display: block;
+                    }
+                }
+
+                // ============================== Slider
+                #slider {
+                    width: 50%;
+                    height: 25vw;
+                    max-height: 150px;
+                    position: relative;
+                }
+
+                #slider img {
+                    opacity: 0;
+
+                    position: absolute;
+
+                    width: 100%;
+                    height: 100%;
+
+                    object-fit: cover;
+
+                    transition: opacity 800ms;
+                }
+
+                #slider img.selected {
+                    opacity: 1;
+                }
+
+
+
+
+            }
+
+            // ============================== Main 
+            main {
+                font-family: 'Roboto Slab', serif;
+                font-weight: 200;
+                background-color: tomato;
+                grid-area: main;
+
+                border: 1px solid #ccc;
+
+                text-align: center;
+                padding: 1rem;
+            }
+
+            // ============================== Footer 
+            footer {
+                font-family: 'Roboto Slab', serif;
+                font-weight: 400;
+                background-color: #fff;
+                color: black;
+                grid-area: footer;
+                
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                ul {
+                    margin-left: 2rem;
+                }
+            }
+
+        }
+
+        // ============================== Icons 
+        .icons {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+
+            a {
+                margin: 0rem 1rem;
+                width: 6rem;
+                height: 6rem;
+                background-color: rgba(204, 204, 204, 0.74);
+                display: inline-block;
+                border-radius: 2.4rem;
+                box-shadow: 0.6rem 0.6rem 1.2rem rgba(0, 0, 0, .15),
+                    -0.6rem -0.6rem 1.2rem rgba(255, 255, 255, .1);
+                overflow: hidden;
+                font-size: 2.5rem;
+                transition: .3s linear;
+                position: relative;
+
+                &:hover {
+                    transform: scale(1.2);
+                    border-radius: 50%;
+                }
+
+                i::before {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    background-size: 200% 200%;
+                    background-position: 75% 75%;
+                    top: 0;
+                    left: 0;
+                    line-height: 6rem;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    transition: background .5s linear;
+                }
+
+                &:hover i::before {
+                    background-position: 0% 0%;
+                }
+
+                .fa-facebook-f::before {
+                    background-image: linear-gradient(135deg, #3b5998 30%, #0a3d62 50%);
+                }
+
+                .fa-instagram::before {
+                    background-image: linear-gradient(135deg, #c32aa3 30%, #0a3d62 50%);
+                }
+
+                .fa-whatsapp::before {
+                    background-image: linear-gradient(135deg, #18d741 30%, #0a3d62 50%);
+                }
+
+                .fa-linkedin-in::before {
+                    background-image: linear-gradient(135deg, #007bb5 30%, #0a3d62 50%);
+                }
+            }
+        }
+
+
+        // ============================== Media 768 
+        @media (max-width: 768px) {
+
+            .container {
+                grid-template-areas:
+
+                    "headerr headerr headerr headerr"
+                    "aside aside aside aside"
+                    "main main main main"
+                    "footer footer footer footer"
+
+                ;
+
+                aside {
+
+                    // ============================== Slider
+                    #slider {
+                        width: 80%;
+
+                        img {
+                            width: 30%;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        // ============================== Media 374  
+        @media (max-width: 374px) {
+
+            .container {
+                grid-template-areas:
+
+                    "headerr headerr headerr headerr"
+                    "aside aside aside aside"
+                    "main main main main"
+                    "footer footer footer footer"
+
+                ;
+
+                header {
+                    display: block;
+                    text-align: center;
+                }
+
+
+            }
+
+
+        }
+    }
+}
